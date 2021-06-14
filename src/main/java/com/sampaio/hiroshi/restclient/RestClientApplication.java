@@ -23,6 +23,10 @@ enum BananaVariety {
     Red, LadyFinger, BlueJava, Manzano, Burro, Plantain
 }
 
+/**
+ * How to use discovery with Feign
+ * https://www.baeldung.com/spring-cloud-netflix-eureka#Feign
+ */
 @FeignClient("rest-server")
 interface BananaVarietyClient {
     @GetMapping(path = "/getBananaVariety", produces = "application/json")
@@ -65,6 +69,11 @@ class Banana {
     private String whoAmI;
 }
 
+/**
+ * How to programmatically fetch service 
+ * configuration from discovery server.
+ * https://spring.io/guides/gs/service-registration-and-discovery/#_talking_to_the_registry * 
+ */
 @RestController
 class ServiceInstanceRestController {
 
